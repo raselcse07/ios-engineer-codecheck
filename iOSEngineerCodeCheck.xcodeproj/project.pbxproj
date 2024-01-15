@@ -29,6 +29,7 @@
 		EBE279FF2B558E2C005CA078 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279FE2B558E2C005CA078 /* Coordinatable.swift */; };
 		EBE27A012B558E53005CA078 /* RepositoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A002B558E53005CA078 /* RepositoryCoordinator.swift */; };
 		EBE27A042B558F94005CA078 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A032B558F94005CA078 /* AppCoordinator.swift */; };
+		EBE27A072B55956E005CA078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A062B55956E005CA078 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		EBE279FE2B558E2C005CA078 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		EBE27A002B558E53005CA078 /* RepositoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCoordinator.swift; sourceTree = "<group>"; };
 		EBE27A032B558F94005CA078 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EBE27A062B55956E005CA078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F1F1CE433594986C9EB66CF3 /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				EBE279E92B558B92005CA078 /* Base */,
 				EBE279EC2B558C21005CA078 /* Protocols */,
 				EBE279E82B558B70005CA078 /* Scenes */,
+				EBE27A052B559558005CA078 /* Utils */,
 				EBE279E62B558910005CA078 /* Supportings */,
 				EBE279E52B5588FE005CA078 /* Resources */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
@@ -245,6 +248,14 @@
 				EBE279FA2B558D3C005CA078 /* RepositoryListViewController.storyboard */,
 			);
 			path = RepositoryList;
+			sourceTree = "<group>";
+		};
+		EBE27A052B559558005CA078 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EBE27A062B55956E005CA078 /* Constant.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +437,7 @@
 				EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
+				EBE27A072B55956E005CA078 /* Constant.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				EBE279F72B558D12005CA078 /* RepositoryListViewController.swift in Sources */,
 				EBE279F92B558D2F005CA078 /* RepositoryListViewModel.swift in Sources */,
