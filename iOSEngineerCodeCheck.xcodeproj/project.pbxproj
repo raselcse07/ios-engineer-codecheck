@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,18 @@
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
+		EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EA2B558BAA005CA078 /* BaseViewController.swift */; };
+		EBE279EE2B558C3D005CA078 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */; };
+		EBE279F02B558C77005CA078 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */; };
+		EBE279F22B558C8E005CA078 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279F12B558C8E005CA078 /* ViewModelable.swift */; };
+		EBE279F42B558CDF005CA078 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279F32B558CDF005CA078 /* BaseViewModel.swift */; };
+		EBE279F72B558D12005CA078 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279F62B558D12005CA078 /* RepositoryListViewController.swift */; };
+		EBE279F92B558D2F005CA078 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279F82B558D2F005CA078 /* RepositoryListViewModel.swift */; };
+		EBE279FB2B558D3C005CA078 /* RepositoryListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE279FA2B558D3C005CA078 /* RepositoryListViewController.storyboard */; };
+		EBE279FD2B558E0D005CA078 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279FC2B558E0D005CA078 /* Coordinator.swift */; };
+		EBE279FF2B558E2C005CA078 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279FE2B558E2C005CA078 /* Coordinatable.swift */; };
+		EBE27A012B558E53005CA078 /* RepositoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A002B558E53005CA078 /* RepositoryCoordinator.swift */; };
+		EBE27A042B558F94005CA078 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A032B558F94005CA078 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +66,18 @@
 		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E40096BBB659FA13EFB39611 /* Pods-iOSEngineerCodeCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		EBE279EA2B558BAA005CA078 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		EBE279F12B558C8E005CA078 /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		EBE279F32B558CDF005CA078 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		EBE279F62B558D12005CA078 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
+		EBE279F82B558D2F005CA078 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
+		EBE279FA2B558D3C005CA078 /* RepositoryListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryListViewController.storyboard; sourceTree = "<group>"; };
+		EBE279FC2B558E0D005CA078 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EBE279FE2B558E2C005CA078 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		EBE27A002B558E53005CA078 /* RepositoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCoordinator.swift; sourceTree = "<group>"; };
+		EBE27A032B558F94005CA078 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F1F1CE433594986C9EB66CF3 /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,7 +113,6 @@
 				E40096BBB659FA13EFB39611 /* Pods-iOSEngineerCodeCheck.debug.xcconfig */,
 				656E8C8C43705665B3F38A11 /* Pods-iOSEngineerCodeCheck.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,7 +141,10 @@
 		BFD945DD244DC5E80012785A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				EBE279E72B55891E005CA078 /* AppDelegates */,
+				EBE279E72B55891E005CA078 /* App */,
+				EBE279E92B558B92005CA078 /* Base */,
+				EBE279EC2B558C21005CA078 /* Protocols */,
+				EBE279E82B558B70005CA078 /* Scenes */,
 				EBE279E62B558910005CA078 /* Supportings */,
 				EBE279E52B5588FE005CA078 /* Resources */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
@@ -171,13 +197,54 @@
 			path = Supportings;
 			sourceTree = "<group>";
 		};
-		EBE279E72B55891E005CA078 /* AppDelegates */ = {
+		EBE279E72B55891E005CA078 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				EBE27A032B558F94005CA078 /* AppCoordinator.swift */,
 			);
-			path = AppDelegates;
+			path = App;
+			sourceTree = "<group>";
+		};
+		EBE279E82B558B70005CA078 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EBE279F52B558CF5005CA078 /* RepositoryList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EBE279E92B558B92005CA078 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EBE279EA2B558BAA005CA078 /* BaseViewController.swift */,
+				EBE279F32B558CDF005CA078 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EBE279EC2B558C21005CA078 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */,
+				EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */,
+				EBE279F12B558C8E005CA078 /* ViewModelable.swift */,
+				EBE279FC2B558E0D005CA078 /* Coordinator.swift */,
+				EBE279FE2B558E2C005CA078 /* Coordinatable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EBE279F52B558CF5005CA078 /* RepositoryList */ = {
+			isa = PBXGroup;
+			children = (
+				EBE279F62B558D12005CA078 /* RepositoryListViewController.swift */,
+				EBE279F82B558D2F005CA078 /* RepositoryListViewModel.swift */,
+				EBE27A002B558E53005CA078 /* RepositoryCoordinator.swift */,
+				EBE279FA2B558D3C005CA078 /* RepositoryListViewController.storyboard */,
+			);
+			path = RepositoryList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
+				EBE279FB2B558D3C005CA078 /* RepositoryListViewController.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 			);
@@ -355,9 +423,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
+				EBE279F72B558D12005CA078 /* RepositoryListViewController.swift in Sources */,
+				EBE279F92B558D2F005CA078 /* RepositoryListViewModel.swift in Sources */,
+				EBE279F02B558C77005CA078 /* ViewModelProtocol.swift in Sources */,
+				EBE279FF2B558E2C005CA078 /* Coordinatable.swift in Sources */,
+				EBE279F42B558CDF005CA078 /* BaseViewModel.swift in Sources */,
+				EBE279FD2B558E0D005CA078 /* Coordinator.swift in Sources */,
+				EBE279EE2B558C3D005CA078 /* StoryboardInstantiable.swift in Sources */,
+				EBE279F22B558C8E005CA078 /* ViewModelable.swift in Sources */,
+				EBE27A042B558F94005CA078 /* AppCoordinator.swift in Sources */,
+				EBE27A012B558E53005CA078 /* RepositoryCoordinator.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
