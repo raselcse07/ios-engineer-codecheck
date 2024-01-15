@@ -15,4 +15,10 @@ struct Constant {
         static let repoSearchNavigationItemTitle = "GitHubのリポジトリを探す"
         static let repoSearchPlaceHolder = "GitHubのリポジトリを検索できるよー"
     }
+    
+    // MARK: - Networking
+    struct Networking {
+        static let githubRepoSearchBaseURL = "https://api.github.com"
+        static let githubRepoSearchPath = "/search/repositories"
+    }
 }

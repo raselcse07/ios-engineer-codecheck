@@ -10,12 +10,24 @@ import Foundation
 
 // MARK: - GithubModel
 struct GithubModel: Decodable {
+    
     let totalCount: Int
     let items: [GithubItem]
+    
+    private enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case items
+    }
 }
 
 // MARK: - Item
 struct GithubItem: Decodable {
+    
     let name: String?
     let fullName: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case fullName = "full_name"
+    }
 }

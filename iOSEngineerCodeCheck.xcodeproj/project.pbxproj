@@ -50,6 +50,8 @@
 		EBE27A392B559E2F005CA078 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A382B559E2F005CA078 /* Method.swift */; };
 		EBE27A3B2B559E66005CA078 /* ObservableType+APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A3A2B559E66005CA078 /* ObservableType+APIClient.swift */; };
 		EBE27A3D2B559E88005CA078 /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A3C2B559E88005CA078 /* URLRequest+Ext.swift */; };
+		EBE27A412B559EFC005CA078 /* GitRepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A402B559EFC005CA078 /* GitRepositoryRequest.swift */; };
+		EBE27A432B559F23005CA078 /* GitRepositoryRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE27A422B559F23005CA078 /* GitRepositoryRequestParameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		EBE27A382B559E2F005CA078 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		EBE27A3A2B559E66005CA078 /* ObservableType+APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+APIClient.swift"; sourceTree = "<group>"; };
 		EBE27A3C2B559E88005CA078 /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
+		EBE27A402B559EFC005CA078 /* GitRepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryRequest.swift; sourceTree = "<group>"; };
+		EBE27A422B559F23005CA078 /* GitRepositoryRequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryRequestParameter.swift; sourceTree = "<group>"; };
 		F1F1CE433594986C9EB66CF3 /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,7 @@
 			children = (
 				EBE279E72B55891E005CA078 /* App */,
 				EBE279E92B558B92005CA078 /* Base */,
+				EBE27A3E2B559ECF005CA078 /* API */,
 				EBE27A142B559BF2005CA078 /* Networking */,
 				EBE279EC2B558C21005CA078 /* Protocols */,
 				EBE27A0D2B5598FC005CA078 /* Models */,
@@ -356,6 +361,23 @@
 				EBE27A3C2B559E88005CA078 /* URLRequest+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EBE27A3E2B559ECF005CA078 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EBE27A3F2B559ED9005CA078 /* GitRepoSearch */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EBE27A3F2B559ED9005CA078 /* GitRepoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				EBE27A402B559EFC005CA078 /* GitRepositoryRequest.swift */,
+				EBE27A422B559F23005CA078 /* GitRepositoryRequestParameter.swift */,
+			);
+			path = GitRepoSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +562,7 @@
 				EBE27A232B559CAE005CA078 /* URLSessionDataTaskProtocol.swift in Sources */,
 				EBE27A292B559CE5005CA078 /* ParameterEncoder.swift in Sources */,
 				EBE27A2D2B559D08005CA078 /* APIClientProtocol.swift in Sources */,
+				EBE27A432B559F23005CA078 /* GitRepositoryRequestParameter.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				EBE27A3D2B559E88005CA078 /* URLRequest+Ext.swift in Sources */,
 				EBE27A252B559CC1005CA078 /* URLRequestBuildable.swift in Sources */,
@@ -549,6 +572,7 @@
 				EBE27A0F2B559908005CA078 /* GithubModel.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				EBE279F72B558D12005CA078 /* RepositoryListViewController.swift in Sources */,
+				EBE27A412B559EFC005CA078 /* GitRepositoryRequest.swift in Sources */,
 				EBE27A392B559E2F005CA078 /* Method.swift in Sources */,
 				EBE279F92B558D2F005CA078 /* RepositoryListViewModel.swift in Sources */,
 				EBE27A322B559D4F005CA078 /* APICommunicatingViewModel.swift in Sources */,

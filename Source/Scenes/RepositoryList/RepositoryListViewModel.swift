@@ -11,12 +11,13 @@ import RxCocoa
 import NSObject_Rx
 
 class RepositoryListViewModel: BaseViewModel,
-                               ViewModelProtocol {
+                               ViewModelProtocol,
+                               APICommunicatingViewModel {
     
     // MARK: - Properties
     var input: Input!
     var output: Output!
-    
+    var apiClient: APIClientProtocol
     
     // MARK: - Input Processing Subjects
     private let searchTextSubject = PublishSubject<String>()
@@ -24,7 +25,8 @@ class RepositoryListViewModel: BaseViewModel,
     // MARK: - Output Processing Subjects
     
     // MARK: - Initializes
-    override init() {
+    init(apiClient: APIClientProtocol = APIClient()) {
+        self.apiClient = apiClient
         super.init()
         makeInputOutput()
         bind()
@@ -57,6 +59,7 @@ extension RepositoryListViewModel {
     func bind() {
         
         searchTextSubject.asObservable()
+            .flatMapLatest { [unowned self] in self.fetchRepository(with: $0) }
             .subscribe(onNext: {
                 print($0)
             })
@@ -64,3 +67,12 @@ extension RepositoryListViewModel {
     }
 }
 
+// MARK: - API Communication
+extension RepositoryListViewModel {
+    
+    private func fetchRepository(with query: String) -> Observable<GithubModel> {
+        let parameter = GitRepositoryRequestParameter(query: query)
+        let request = GitRepositoryRequest(parameter: parameter)
+        return doAPIRequest(request)
+    }
+}
