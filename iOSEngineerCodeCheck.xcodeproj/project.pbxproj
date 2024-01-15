@@ -81,9 +81,9 @@
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
-				BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */,
-				BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */,
-				BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */,
+				BFD945DD244DC5E80012785A /* Source */,
+				BFD945F4244DC5EB0012785A /* UnitTests */,
+				BFD945FF244DC5EB0012785A /* UITests */,
 				BFD945DC244DC5E80012785A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,37 +98,61 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
+		BFD945DD244DC5E80012785A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
-				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				EBE279E72B55891E005CA078 /* AppDelegates */,
+				EBE279E62B558910005CA078 /* Supportings */,
+				EBE279E52B5588FE005CA078 /* Resources */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* ViewController2.swift */,
-				BFD945E4244DC5E80012785A /* Main.storyboard */,
-				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
-				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
-				BFD945EC244DC5EB0012785A /* Info.plist */,
 			);
-			path = iOSEngineerCodeCheck;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */ = {
+		BFD945F4244DC5EB0012785A /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 			);
-			path = iOSEngineerCodeCheckTests;
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */ = {
+		BFD945FF244DC5EB0012785A /* UITests */ = {
 			isa = PBXGroup;
 			children = (
 				BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */,
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
-			path = iOSEngineerCodeCheckUITests;
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		EBE279E52B5588FE005CA078 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E4244DC5E80012785A /* Main.storyboard */,
+				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
+				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBE279E62B558910005CA078 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945EC244DC5EB0012785A /* Info.plist */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		EBE279E72B55891E005CA078 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
+				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iOSEngineerCodeCheck/Info.plist;
+				INFOPLIST_FILE = Source/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iOSEngineerCodeCheck/Info.plist;
+				INFOPLIST_FILE = Source/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +503,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Info.plist;
+				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +524,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckTests/Info.plist;
+				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,7 +544,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,7 +564,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
