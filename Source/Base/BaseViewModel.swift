@@ -6,6 +6,10 @@
 //  Copyright © 2024 YUMEMI Inc. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
 
-class BaseViewModel: NSObject {}
+class BaseViewModel: NSObject {
+    let activityIndicator = ActivityIndicator()
+    let messageSinkRelay = BehaviorRelay<String?>(value: nil)
+}

@@ -17,6 +17,7 @@ class RepositoryListViewModel: BaseViewModel,
     var input: Input!
     var output: Output!
     
+    
     // MARK: - Input Processing Subjects
     private let searchTextSubject = PublishSubject<String>()
     
