@@ -10,13 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import RxDataSources
 
 class RepositoryListViewController: BaseViewController,
                                     ViewModelable,
                                     Coordinatable {
     
     // MARK: - IBOutlets
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(RepositoryListTableViewCell.self)
+            tableView.keyboardDismissMode = .interactive
+            tableView.keyboardDismissMode = .onDrag
+        }
+    }
     
     // MARK: - Properties
     var viewModel: RepositoryListViewModel!
@@ -28,6 +35,7 @@ class RepositoryListViewController: BaseViewController,
         return searchController
     }()
     
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<GithubRepositoryListSection>?
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +49,36 @@ extension RepositoryListViewController {
     
     private func setupObserver() {
         
+        // Data Source
+        makeDataSource()
+        guard let dataSource = dataSource else {
+            return
+        }
+        
         // input
         searchController.searchBar
             .rx.text.orEmpty
             .filter { !$0.isEmpty }
+            .throttle(.seconds(5), scheduler: MainScheduler.asyncInstance)
             .bind(to: viewModel.input.searchText)
             .disposed(by: rx.disposeBag)
         
+        // output
+        viewModel.output
+            .sections
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: rx.disposeBag)
+    }
+}
+
+// MARK: - Data Source
+extension RepositoryListViewController {
+    private func makeDataSource() {
+        dataSource = RxTableViewSectionedAnimatedDataSource(configureCell: {_, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(with: RepositoryListTableViewCell.self, for: indexPath)
+            cell.setup(with: item)
+            return cell
+        })
     }
 }
 

@@ -9,6 +9,7 @@
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import RxDataSources
 
 class RepositoryListViewModel: BaseViewModel,
                                ViewModelProtocol,
@@ -23,6 +24,7 @@ class RepositoryListViewModel: BaseViewModel,
     private let searchTextSubject = PublishSubject<String>()
     
     // MARK: - Output Processing Subjects
+    private let sectionSubject = PublishSubject<[GithubRepositoryListSection]>()
     
     // MARK: - Initializes
     init(apiClient: APIClientProtocol = APIClient()) {
@@ -42,14 +44,18 @@ extension RepositoryListViewModel {
     }
     
     struct Output {
-        
+        let sections: Driver<[GithubRepositoryListSection]>
     }
     
     private func makeInputOutput() {
         
-        input = Input(searchText: searchTextSubject.asObserver())
+        input = Input(
+            searchText: searchTextSubject.asObserver()
+        )
         
-        output = Output()
+        output = Output(
+            sections: sectionSubject.asDriverOnErrorJustComplete()
+        )
     }
 }
 
@@ -60,10 +66,18 @@ extension RepositoryListViewModel {
         
         searchTextSubject.asObservable()
             .flatMapLatest { [unowned self] in self.fetchRepository(with: $0) }
-            .subscribe(onNext: {
-                print($0)
-            })
+            .map { $0.items.map { [unowned self] in self.composeSections(using: $0) }}
+            .map { [GithubRepositoryListSection(items: $0)] }
+            .bind(to: sectionSubject)
             .disposed(by: rx.disposeBag)
+    }
+}
+
+// MARK: - Compose Section
+extension RepositoryListViewModel {
+    private func composeSections(using item: GithubItem) -> RepositoryListTableViewCell.Item {
+        let item = RepositoryListTableViewCell.Item(id: item.id, title: item.fullName)
+        return item
     }
 }
 
@@ -74,5 +88,24 @@ extension RepositoryListViewModel {
         let parameter = GitRepositoryRequestParameter(query: query)
         let request = GitRepositoryRequest(parameter: parameter)
         return doAPIRequest(request)
+    }
+}
+
+// MARK: - Section Model
+struct GithubRepositoryListSection: IdentifiableType {
+    
+    var items: [RepositoryListTableViewCell.Item]
+    
+    var identity: String {
+        "GithubRepositoryListSection"
+    }
+}
+
+// MARK: - GithubRepositoryListSection + AnimatableSectionModelType
+extension GithubRepositoryListSection: AnimatableSectionModelType {
+    
+    init(original: GithubRepositoryListSection, items: [RepositoryListTableViewCell.Item]) {
+        self = original
+        self.items = items
     }
 }

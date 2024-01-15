@@ -23,10 +23,12 @@ struct GithubModel: Decodable {
 // MARK: - Item
 struct GithubItem: Decodable {
     
+    let id: Int
     let name: String?
     let fullName: String
     
     private enum CodingKeys: String, CodingKey {
+        case id
         case name
         case fullName = "full_name"
     }
