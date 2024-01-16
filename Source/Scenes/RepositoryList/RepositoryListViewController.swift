@@ -70,6 +70,11 @@ extension RepositoryListViewController {
             .sections
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: rx.disposeBag)
+        
+        viewModel.output
+            .isBusy
+            .drive(rx.isBusy)
+            .disposed(by: rx.disposeBag)
     }
 }
 

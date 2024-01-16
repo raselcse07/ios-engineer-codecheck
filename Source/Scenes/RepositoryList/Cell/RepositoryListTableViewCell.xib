@@ -39,6 +39,9 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcg-ea-hbZ" customClass="ImageWithTextView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="HCo-Ku-Hnk"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-K9-2xu" customClass="ImageWithTextView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                                         <rect key="frame" x="122.33333333333334" y="0.0" width="117.33333333333334" height="20"/>
@@ -48,9 +51,6 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="pvj-QN-kLx"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
