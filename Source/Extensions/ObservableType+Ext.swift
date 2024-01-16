@@ -18,6 +18,12 @@ extension ObservableType {
         }
     }
     
+    func asDriverOnErrorJustComplete() -> Driver<Element> {
+        asDriver { error in
+            return Driver.empty()
+        }
+    }
+    
     func mapToVoid() -> Observable<Void> {
         map { _ in }
     }

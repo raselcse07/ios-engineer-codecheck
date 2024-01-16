@@ -12,30 +12,6 @@ import RxCocoa
 
 class BaseViewController: UIViewController {
     
-    
-    func showToast(message: String, duration: TimeInterval = 2.0) {
-        
-        let toastView = ToastView(message: message)
-        view.addSubview(toastView)
-        
-        toastView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            toastView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toastView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            toastView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 20),
-            toastView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20)
-        ])
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
-            UIView.animate(withDuration: 0.3, animations: {
-                toastView.alpha = 0
-            }, completion: { _ in
-                toastView.removeFromSuperview()
-            })
-        }
-    }
-    
     fileprivate func displayActivityTracker() {
         guard let keyWindow = AppUtil.keyWindow else { return }
         let activityTracker = ActivityTracker()
@@ -68,12 +44,6 @@ extension Reactive where Base: BaseViewController {
             } else {
                 base.removeActivityTracker()
             }
-        }
-    }
-    
-    var showToast: Binder<String> {
-        Binder(base) { base, message in
-            base.showToast(message: message)
         }
     }
 }

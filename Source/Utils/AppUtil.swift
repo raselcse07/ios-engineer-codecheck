@@ -18,5 +18,22 @@ struct AppUtil {
             .first?.windows
             .first(where: { $0.isKeyWindow })
     }
+    
+    static func topViewController(
+        base: UIViewController? = AppUtil.keyWindow?.rootViewController
+    ) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return topViewController(base: selected)
+            }
+        }
+        if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        return base
+    }
 }
 

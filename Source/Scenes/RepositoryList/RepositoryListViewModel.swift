@@ -22,6 +22,7 @@ class RepositoryListViewModel: BaseViewModel,
     
     // MARK: - Input Processing Subjects
     private let searchTextSubject = PublishSubject<String>()
+    private let cancelButtonClickedSubject = PublishSubject<Void>()
     
     // MARK: - Output Processing Subjects
     private let sectionSubject = PublishSubject<[GithubRepositoryListSection]>()
@@ -41,6 +42,7 @@ extension RepositoryListViewModel {
     
     struct Input {
         let searchText: AnyObserver<String>
+        let didClickedOnCancelButton: AnyObserver<Void>
     }
     
     struct Output {
@@ -52,11 +54,12 @@ extension RepositoryListViewModel {
     private func makeInputOutput() {
         
         input = Input(
-            searchText: searchTextSubject.asObserver()
+            searchText: searchTextSubject.asObserver(), 
+            didClickedOnCancelButton: cancelButtonClickedSubject.asObserver()
         )
         
         output = Output(
-            sections: sectionSubject.asDriver(onErrorJustReturn: []),
+            sections: sectionSubject.asDriverOnErrorJustComplete(),
             isBusy: activityIndicator.asDriver(),
             message: messageSinkRelay.compactMap { $0 }.asDriver(onErrorJustReturn: "")
         )
@@ -68,10 +71,15 @@ extension RepositoryListViewModel {
     
     func bind() {
         
-        searchTextSubject.asObservable()
+        searchTextSubject
             .flatMapLatest { [unowned self] in self.fetchRepository(with: $0) }
             .map { $0.items.map { [unowned self] in self.composeSections(using: $0) }}
             .map { [GithubRepositoryListSection(items: $0)] }
+            .bind(to: sectionSubject)
+            .disposed(by: rx.disposeBag)
+        
+        cancelButtonClickedSubject
+            .map { _ -> [GithubRepositoryListSection] in [] }
             .bind(to: sectionSubject)
             .disposed(by: rx.disposeBag)
     }

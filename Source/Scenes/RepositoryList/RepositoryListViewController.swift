@@ -59,10 +59,15 @@ extension RepositoryListViewController {
         // input
         searchController.searchBar
             .rx.text.orEmpty
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter { $0.count >= 2 }
             .bind(to: viewModel.input.searchText)
+            .disposed(by: rx.disposeBag)
+        
+        searchController.searchBar
+            .rx.cancelButtonClicked
+            .bind(to: viewModel.input.didClickedOnCancelButton)
             .disposed(by: rx.disposeBag)
         
         // output
@@ -79,7 +84,7 @@ extension RepositoryListViewController {
         viewModel.output
             .message
             .filter { !$0.isEmpty }
-            .drive(rx.showToast)
+            .drive(rx.showAlert)
             .disposed(by: rx.disposeBag)
     }
 }
@@ -101,5 +106,15 @@ extension RepositoryListViewController {
     private func setupNavigationBar() {
         navigationItem.title = Constant.Text.repoSearchNavigationItemTitle
         navigationItem.searchController = searchController
+    }
+}
+
+// MARK: - Reactive
+extension Reactive where Base: RepositoryListViewController {
+    
+    var showAlert: Binder<String> {
+        Binder(base) { base, message in
+            Alert.show(title: "", message: message)
+        }
     }
 }
