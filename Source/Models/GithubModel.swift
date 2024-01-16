@@ -10,7 +10,7 @@ import Foundation
 import RxDataSources
 
 // MARK: - GithubModel
-struct GithubModel: Decodable {
+struct GithubModel: Codable {
     
     let totalCount: Int
     let items: [GithubItem]
@@ -22,7 +22,7 @@ struct GithubModel: Decodable {
 }
 
 // MARK: - Item
-struct GithubItem: Decodable {
+struct GithubItem: Codable {
     
     let id: Int
     let name: String?
@@ -48,7 +48,7 @@ struct GithubItem: Decodable {
 }
 
 // MARK: - Owner
-struct GithubItemOwner: Decodable {
+struct GithubItemOwner: Codable {
     
     let avatarURL: String
     

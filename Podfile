@@ -15,6 +15,18 @@ def common_pod
 
 end
 
+def testing_pod
+  use_frameworks!
+  
+  pod 'RxTest'
+  
+end
+
 target 'iOSEngineerCodeCheck' do
   common_pod
+end
+
+target 'iOSEngineerCodeCheckTests' do
+  inherit! :search_paths
+  testing_pod
 end
