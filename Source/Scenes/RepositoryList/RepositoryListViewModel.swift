@@ -46,6 +46,7 @@ extension RepositoryListViewModel {
     struct Output {
         let sections: Driver<[GithubRepositoryListSection]>
         let isBusy: Driver<Bool>
+        let message: Driver<String>
     }
     
     private func makeInputOutput() {
@@ -55,8 +56,9 @@ extension RepositoryListViewModel {
         )
         
         output = Output(
-            sections: sectionSubject.asDriverOnErrorJustComplete(),
-            isBusy: activityIndicator.asDriver()
+            sections: sectionSubject.asDriver(onErrorJustReturn: []),
+            isBusy: activityIndicator.asDriver(),
+            message: messageSinkRelay.compactMap { $0 }.asDriver(onErrorJustReturn: "")
         )
     }
 }

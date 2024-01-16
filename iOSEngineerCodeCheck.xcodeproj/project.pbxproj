@@ -28,6 +28,7 @@
 		EBC0D78D2B567003006B3ED2 /* ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D78C2B567003006B3ED2 /* ActivityTracker.swift */; };
 		EBC0D78F2B567013006B3ED2 /* ActivityTracker.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0D78E2B567013006B3ED2 /* ActivityTracker.xib */; };
 		EBC0D7932B56722F006B3ED2 /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7922B56722F006B3ED2 /* AppUtil.swift */; };
+		EBC0D7952B567775006B3ED2 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7942B567775006B3ED2 /* ToastView.swift */; };
 		EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EA2B558BAA005CA078 /* BaseViewController.swift */; };
 		EBE279EE2B558C3D005CA078 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */; };
 		EBE279F02B558C77005CA078 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */; };
@@ -114,6 +115,7 @@
 		EBC0D78C2B567003006B3ED2 /* ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTracker.swift; sourceTree = "<group>"; };
 		EBC0D78E2B567013006B3ED2 /* ActivityTracker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTracker.xib; sourceTree = "<group>"; };
 		EBC0D7922B56722F006B3ED2 /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
+		EBC0D7942B567775006B3ED2 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		EBE279EA2B558BAA005CA078 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				EBC0D78C2B567003006B3ED2 /* ActivityTracker.swift */,
 				EBC0D78E2B567013006B3ED2 /* ActivityTracker.xib */,
+				EBC0D7942B567775006B3ED2 /* ToastView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				EBE27A3D2B559E88005CA078 /* URLRequest+Ext.swift in Sources */,
 				EBE27A252B559CC1005CA078 /* URLRequestBuildable.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
+				EBC0D7952B567775006B3ED2 /* ToastView.swift in Sources */,
 				EBE27A072B55956E005CA078 /* Constant.swift in Sources */,
 				EBE27A472B55A3CB005CA078 /* RepositoryListTableViewCell.swift in Sources */,
 				EBE27A1F2B559C7D005CA078 /* APIClient.swift in Sources */,

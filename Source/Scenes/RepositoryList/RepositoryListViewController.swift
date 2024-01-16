@@ -75,6 +75,12 @@ extension RepositoryListViewController {
             .isBusy
             .drive(rx.isBusy)
             .disposed(by: rx.disposeBag)
+        
+        viewModel.output
+            .message
+            .filter { !$0.isEmpty }
+            .drive(rx.showToast)
+            .disposed(by: rx.disposeBag)
     }
 }
 

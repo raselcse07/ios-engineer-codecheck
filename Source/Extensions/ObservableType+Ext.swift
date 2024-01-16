@@ -21,13 +21,6 @@ extension ObservableType {
     func mapToVoid() -> Observable<Void> {
         map { _ in }
     }
-    
-    func asDriverOnErrorJustComplete() -> Driver<Element> {
-        asDriver { error in
-            assertionFailure("Error!!!")
-            return Driver.empty()
-        }
-    }
 }
 
 extension SharedSequenceConvertibleType {

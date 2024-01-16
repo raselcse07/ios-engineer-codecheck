@@ -28,6 +28,7 @@ extension APIError {
         case decodeError(error: Error)
         case unexpectedError
         case noInternetConnection
+        case rateLimitError
         case otherError(error: Error)
     }
 }
@@ -73,6 +74,8 @@ extension APIError.SessionTaskError: LocalizedError {
             return "SessionTaskError: Unexpected Error!"
         case .noInternetConnection:
             return "SessionTaskError: No internet connection!"
+        case .rateLimitError:
+            return "API rate limit exceeded!"
         case .otherError(let error):
             return "SessionTaskError: \(error.localizedDescription)"
         }

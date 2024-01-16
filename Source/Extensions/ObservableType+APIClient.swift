@@ -15,6 +15,8 @@ extension ObservableType where Element == (HTTPURLResponse, Data) {
         flatMap { response -> Observable<Element> in
             if (200 ..< 300) ~= response.0.statusCode {
                 return .just(response)
+            } else if response.0.statusCode == 403 {
+                return .error(APIError.sessionTaskError(reason: .rateLimitError))
             } else {
                 return .error(APIError.sessionTaskError(reason: .unexpectedError))
             }
