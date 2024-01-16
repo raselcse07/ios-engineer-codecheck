@@ -36,6 +36,7 @@ class RepositoryListViewController: BaseViewController,
     }()
     
     private var dataSource: RxTableViewSectionedAnimatedDataSource<GithubRepositoryListSection>?
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +59,9 @@ extension RepositoryListViewController {
         // input
         searchController.searchBar
             .rx.text.orEmpty
-            .filter { !$0.isEmpty }
-            .throttle(.seconds(5), scheduler: MainScheduler.asyncInstance)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .filter { $0.count >= 2 }
             .bind(to: viewModel.input.searchText)
             .disposed(by: rx.disposeBag)
         

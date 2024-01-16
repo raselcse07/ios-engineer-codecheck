@@ -9,6 +9,9 @@ def common_pod
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'NSObject+Rx'
+  
+  # Cache
+  pod 'Kingfisher'
 
 end
 

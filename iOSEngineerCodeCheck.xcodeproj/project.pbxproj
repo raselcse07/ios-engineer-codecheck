@@ -17,6 +17,14 @@
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
+		EBC0D7792B5654F4006B3ED2 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7782B5654F4006B3ED2 /* RoundImageView.swift */; };
+		EBC0D77B2B56551F006B3ED2 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D77A2B56551F006B3ED2 /* UIImageView+Ext.swift */; };
+		EBC0D77D2B565950006B3ED2 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D77C2B565950006B3ED2 /* Int+Ext.swift */; };
+		EBC0D7822B56620C006B3ED2 /* ImageWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7812B56620C006B3ED2 /* ImageWithTextView.swift */; };
+		EBC0D7842B566213006B3ED2 /* ImageWithTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC0D7832B566213006B3ED2 /* ImageWithTextView.xib */; };
+		EBC0D7862B566261006B3ED2 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7852B566261006B3ED2 /* XibView.swift */; };
+		EBC0D7882B566506006B3ED2 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7872B566506006B3ED2 /* String+Ext.swift */; };
+		EBC0D78A2B566656006B3ED2 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0D7892B566656006B3ED2 /* UIFont.swift */; };
 		EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EA2B558BAA005CA078 /* BaseViewController.swift */; };
 		EBE279EE2B558C3D005CA078 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */; };
 		EBE279F02B558C77005CA078 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */; };
@@ -92,6 +100,14 @@
 		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E40096BBB659FA13EFB39611 /* Pods-iOSEngineerCodeCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		EBC0D7782B5654F4006B3ED2 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		EBC0D77A2B56551F006B3ED2 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		EBC0D77C2B565950006B3ED2 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
+		EBC0D7812B56620C006B3ED2 /* ImageWithTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTextView.swift; sourceTree = "<group>"; };
+		EBC0D7832B566213006B3ED2 /* ImageWithTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageWithTextView.xib; sourceTree = "<group>"; };
+		EBC0D7852B566261006B3ED2 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		EBC0D7872B566506006B3ED2 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		EBC0D7892B566656006B3ED2 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		EBE279EA2B558BAA005CA078 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EBE279ED2B558C3D005CA078 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		EBE279EF2B558C77005CA078 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -237,6 +253,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EBC0D7802B5661DE006B3ED2 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				EBC0D7812B56620C006B3ED2 /* ImageWithTextView.swift */,
+				EBC0D7832B566213006B3ED2 /* ImageWithTextView.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		EBE279E52B5588FE005CA078 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +304,7 @@
 				EBE279EA2B558BAA005CA078 /* BaseViewController.swift */,
 				EBE279F32B558CDF005CA078 /* BaseViewModel.swift */,
 				EBE27A362B559DAF005CA078 /* ActivityIndicator.swift */,
+				EBC0D7782B5654F4006B3ED2 /* RoundImageView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -300,6 +326,7 @@
 				EBE27A2C2B559D08005CA078 /* APIClientProtocol.swift */,
 				EBE27A2E2B559D1E005CA078 /* APIRequestProtocol.swift */,
 				EBE27A312B559D4F005CA078 /* APICommunicatingViewModel.swift */,
+				EBC0D7852B566261006B3ED2 /* XibView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -307,6 +334,7 @@
 		EBE279F52B558CF5005CA078 /* RepositoryList */ = {
 			isa = PBXGroup;
 			children = (
+				EBC0D7802B5661DE006B3ED2 /* SubViews */,
 				EBE27A442B55A3A9005CA078 /* Cell */,
 				EBE279F62B558D12005CA078 /* RepositoryListViewController.swift */,
 				EBE279F82B558D2F005CA078 /* RepositoryListViewModel.swift */,
@@ -367,6 +395,10 @@
 				EBE27A3A2B559E66005CA078 /* ObservableType+APIClient.swift */,
 				EBE27A3C2B559E88005CA078 /* URLRequest+Ext.swift */,
 				EBE27A492B55A549005CA078 /* UITableView+Ext.swift */,
+				EBC0D77A2B56551F006B3ED2 /* UIImageView+Ext.swift */,
+				EBC0D77C2B565950006B3ED2 /* Int+Ext.swift */,
+				EBC0D7872B566506006B3ED2 /* String+Ext.swift */,
+				EBC0D7892B566656006B3ED2 /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -506,6 +538,7 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				EBE279FB2B558D3C005CA078 /* RepositoryListViewController.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				EBC0D7842B566213006B3ED2 /* ImageWithTextView.xib in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 				EBE27A482B55A3CB005CA078 /* RepositoryListTableViewCell.xib in Resources */,
 			);
@@ -575,11 +608,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE279EB2B558BAA005CA078 /* BaseViewController.swift in Sources */,
+				EBC0D77D2B565950006B3ED2 /* Int+Ext.swift in Sources */,
 				EBE27A192B559C32005CA078 /* SessionTask.swift in Sources */,
 				EBE27A2B2B559CF6005CA078 /* JSONDecoderProtocol.swift in Sources */,
 				EBE27A232B559CAE005CA078 /* URLSessionDataTaskProtocol.swift in Sources */,
+				EBC0D7822B56620C006B3ED2 /* ImageWithTextView.swift in Sources */,
 				EBE27A292B559CE5005CA078 /* ParameterEncoder.swift in Sources */,
 				EBE27A2D2B559D08005CA078 /* APIClientProtocol.swift in Sources */,
+				EBC0D77B2B56551F006B3ED2 /* UIImageView+Ext.swift in Sources */,
 				EBE27A432B559F23005CA078 /* GitRepositoryRequestParameter.swift in Sources */,
 				BFD945E3244DC5E80012785A /* ViewController.swift in Sources */,
 				EBE27A3D2B559E88005CA078 /* URLRequest+Ext.swift in Sources */,
@@ -592,6 +628,7 @@
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				EBE279F72B558D12005CA078 /* RepositoryListViewController.swift in Sources */,
 				EBE27A412B559EFC005CA078 /* GitRepositoryRequest.swift in Sources */,
+				EBC0D78A2B566656006B3ED2 /* UIFont.swift in Sources */,
 				EBE27A392B559E2F005CA078 /* Method.swift in Sources */,
 				EBE279F92B558D2F005CA078 /* RepositoryListViewModel.swift in Sources */,
 				EBE27A322B559D4F005CA078 /* APICommunicatingViewModel.swift in Sources */,
@@ -601,6 +638,7 @@
 				EBE279FF2B558E2C005CA078 /* Coordinatable.swift in Sources */,
 				EBE279F42B558CDF005CA078 /* BaseViewModel.swift in Sources */,
 				EBE279FD2B558E0D005CA078 /* Coordinator.swift in Sources */,
+				EBC0D7882B566506006B3ED2 /* String+Ext.swift in Sources */,
 				EBE279EE2B558C3D005CA078 /* StoryboardInstantiable.swift in Sources */,
 				EBE27A3B2B559E66005CA078 /* ObservableType+APIClient.swift in Sources */,
 				EBE27A352B559D8A005CA078 /* ObservableType+Ext.swift in Sources */,
@@ -610,9 +648,11 @@
 				EBE27A212B559C9B005CA078 /* URLSessionProtocol.swift in Sources */,
 				EBE27A272B559CD3005CA078 /* SessionTaskProtocol.swift in Sources */,
 				EBE27A1D2B559C66005CA078 /* URLEncoding.swift in Sources */,
+				EBC0D7792B5654F4006B3ED2 /* RoundImageView.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				EBE27A4A2B55A549005CA078 /* UITableView+Ext.swift in Sources */,
 				EBE27A1B2B559C4B005CA078 /* JSONEncoding.swift in Sources */,
+				EBC0D7862B566261006B3ED2 /* XibView.swift in Sources */,
 				EBE27A172B559C18005CA078 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ class RepositoryListViewModel: BaseViewModel,
     // MARK: - Output Processing Subjects
     private let sectionSubject = PublishSubject<[GithubRepositoryListSection]>()
     
-    // MARK: - Initializes
+    // MARK: - Initialization
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
         super.init()
@@ -76,8 +76,14 @@ extension RepositoryListViewModel {
 // MARK: - Compose Section
 extension RepositoryListViewModel {
     private func composeSections(using item: GithubItem) -> RepositoryListTableViewCell.Item {
-        let item = RepositoryListTableViewCell.Item(id: item.id, title: item.fullName)
-        return item
+        RepositoryListTableViewCell.Item(
+            id: item.id,
+            title: item.fullName,
+            avatarURLString: item.owner.avatarURL,
+            watchCount: item.watchersCount,
+            startCount: item.stargazersCount, 
+            language: item.language ?? Constant.Text.unknown
+        )
     }
 }
 

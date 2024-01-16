@@ -5,37 +5,79 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RepositoryListTableViewCell" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="RepositoryListTableViewCell" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="436" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-Js-wp9">
-                        <rect key="frame" x="16" y="12" width="288" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXf-5T-pdm" customClass="RoundImageView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                        <rect key="frame" x="12" y="22.666666666666671" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="O7M-ZF-EXp"/>
+                            <constraint firstAttribute="height" constant="40" id="mqf-WY-nxe"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rxw-CO-Tqo">
+                        <rect key="frame" x="62" y="12" width="362" height="61"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUO-Oc-qGA">
+                                <rect key="frame" x="0.0" y="0.0" width="362" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YFD-mb-FwC">
+                                <rect key="frame" x="0.0" y="41" width="362" height="20"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcg-ea-hbZ" customClass="ImageWithTextView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="20"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-K9-2xu" customClass="ImageWithTextView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                                        <rect key="frame" x="122.33333333333334" y="0.0" width="117.33333333333334" height="20"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPP-8h-cj0" customClass="ImageWithTextView" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                                        <rect key="frame" x="244.66666666666671" y="0.0" width="117.33333333333334" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="pvj-QN-kLx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="4QP-Js-wp9" secondAttribute="bottom" constant="12" id="3vC-qX-rwD"/>
-                    <constraint firstItem="4QP-Js-wp9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Kdw-h9-Fpn"/>
-                    <constraint firstAttribute="trailing" secondItem="4QP-Js-wp9" secondAttribute="trailing" constant="16" id="LGu-VD-zkM"/>
-                    <constraint firstItem="4QP-Js-wp9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NtG-IB-rbG"/>
+                    <constraint firstItem="zXf-5T-pdm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="AKT-UH-C5c"/>
+                    <constraint firstItem="zXf-5T-pdm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Eeg-r4-x9q"/>
+                    <constraint firstAttribute="trailing" secondItem="rxw-CO-Tqo" secondAttribute="trailing" constant="12" id="JKE-Ul-NFs"/>
+                    <constraint firstItem="rxw-CO-Tqo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Zbd-eP-Wy2"/>
+                    <constraint firstItem="rxw-CO-Tqo" firstAttribute="leading" secondItem="zXf-5T-pdm" secondAttribute="trailing" constant="10" id="fF9-F4-FcJ"/>
+                    <constraint firstAttribute="bottom" secondItem="rxw-CO-Tqo" secondAttribute="bottom" constant="12" id="r2l-k5-68r"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="titleLabel" destination="4QP-Js-wp9" id="A1j-2q-YlB"/>
+                <outlet property="avatarImageView" destination="zXf-5T-pdm" id="X0T-2U-xVt"/>
+                <outlet property="languageView" destination="yPP-8h-cj0" id="SPF-Ql-y3w"/>
+                <outlet property="starCountView" destination="0a4-K9-2xu" id="WGF-d2-QIO"/>
+                <outlet property="titleLabel" destination="MUO-Oc-qGA" id="wFc-MN-eXo"/>
+                <outlet property="watchCountView" destination="kcg-ea-hbZ" id="dA2-vT-SNZ"/>
             </connections>
-            <point key="canvasLocation" x="139" y="20"/>
+            <point key="canvasLocation" x="227.48091603053433" y="34.154929577464792"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
