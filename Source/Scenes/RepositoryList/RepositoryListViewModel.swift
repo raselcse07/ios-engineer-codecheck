@@ -22,10 +22,12 @@ class RepositoryListViewModel: BaseViewModel,
     
     // MARK: - Input Processing Subjects
     private let searchTextSubject = PublishSubject<String>()
+    private let selectedModelSubject = PublishSubject<GithubItem>()
     private let cancelButtonClickedSubject = PublishSubject<Void>()
     
     // MARK: - Output Processing Subjects
     private let sectionSubject = PublishSubject<[GithubRepositoryListSection]>()
+    private let detailRequestSubject = PublishSubject<GithubItem>()
     
     // MARK: - Initialization
     init(apiClient: APIClientProtocol = APIClient()) {
@@ -42,11 +44,13 @@ extension RepositoryListViewModel {
     
     struct Input {
         let searchText: AnyObserver<String>
+        let selectedModel: AnyObserver<GithubItem>
         let didClickedOnCancelButton: AnyObserver<Void>
     }
     
     struct Output {
         let sections: Driver<[GithubRepositoryListSection]>
+        let detailRequest: Driver<GithubItem>
         let isBusy: Driver<Bool>
         let message: Driver<String>
     }
@@ -55,11 +59,13 @@ extension RepositoryListViewModel {
         
         input = Input(
             searchText: searchTextSubject.asObserver(), 
+            selectedModel: selectedModelSubject.asObserver(), 
             didClickedOnCancelButton: cancelButtonClickedSubject.asObserver()
         )
         
         output = Output(
-            sections: sectionSubject.asDriverOnErrorJustComplete(),
+            sections: sectionSubject.asDriverOnErrorJustComplete(), 
+            detailRequest: detailRequestSubject.asDriverOnErrorJustComplete(),
             isBusy: activityIndicator.asDriver(),
             message: messageSinkRelay.compactMap { $0 }.asDriver(onErrorJustReturn: "")
         )
@@ -73,29 +79,18 @@ extension RepositoryListViewModel {
         
         searchTextSubject
             .flatMapLatest { [unowned self] in self.fetchRepository(with: $0) }
-            .map { $0.items.map { [unowned self] in self.composeSections(using: $0) }}
-            .map { [GithubRepositoryListSection(items: $0)] }
+            .map { [GithubRepositoryListSection(items: $0.items)] }
             .bind(to: sectionSubject)
+            .disposed(by: rx.disposeBag)
+        
+        selectedModelSubject
+            .bind(to: detailRequestSubject)
             .disposed(by: rx.disposeBag)
         
         cancelButtonClickedSubject
             .map { _ -> [GithubRepositoryListSection] in [] }
             .bind(to: sectionSubject)
             .disposed(by: rx.disposeBag)
-    }
-}
-
-// MARK: - Compose Section
-extension RepositoryListViewModel {
-    private func composeSections(using item: GithubItem) -> RepositoryListTableViewCell.Item {
-        RepositoryListTableViewCell.Item(
-            id: item.id,
-            title: item.fullName,
-            avatarURLString: item.owner.avatarURL,
-            watchCount: item.watchersCount,
-            startCount: item.stargazersCount, 
-            language: item.language ?? Constant.Text.unknown
-        )
     }
 }
 
@@ -112,7 +107,7 @@ extension RepositoryListViewModel {
 // MARK: - Section Model
 struct GithubRepositoryListSection: IdentifiableType {
     
-    var items: [RepositoryListTableViewCell.Item]
+    var items: [GithubItem]
     
     var identity: String {
         "GithubRepositoryListSection"
@@ -122,7 +117,7 @@ struct GithubRepositoryListSection: IdentifiableType {
 // MARK: - GithubRepositoryListSection + AnimatableSectionModelType
 extension GithubRepositoryListSection: AnimatableSectionModelType {
     
-    init(original: GithubRepositoryListSection, items: [RepositoryListTableViewCell.Item]) {
+    init(original: GithubRepositoryListSection, items: [GithubItem]) {
         self = original
         self.items = items
     }

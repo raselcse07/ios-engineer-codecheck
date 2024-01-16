@@ -24,4 +24,11 @@ final class RepositoryCoordinator: Coordinator {
         repoController.register(to: self)
         return repoController
     }
+    
+    func startDetail(item: GithubItem) {
+        var repoDetailController: RepositoryDetailViewController = .instantiateViewController()
+        let viewModel = RepositoryDetailViewModel(item: item)
+        repoDetailController.bind(to: viewModel)
+        navigationController.pushViewController(repoDetailController, animated: true)
+    }
 }

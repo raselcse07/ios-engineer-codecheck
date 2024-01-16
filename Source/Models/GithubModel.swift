@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 // MARK: - GithubModel
 struct GithubModel: Decodable {
@@ -29,6 +30,8 @@ struct GithubItem: Decodable {
     let owner: GithubItemOwner
     let stargazersCount: Int
     let watchersCount: Int
+    let forksCount: Int
+    let openIssuesCount: Int
     let language: String?
     
     private enum CodingKeys: String, CodingKey {
@@ -39,6 +42,8 @@ struct GithubItem: Decodable {
         case stargazersCount = "stargazers_count"
         case watchersCount = "watchers_count"
         case language
+        case forksCount = "forks_count"
+        case openIssuesCount = "open_issues_count"
     }
 }
 
@@ -49,5 +54,21 @@ struct GithubItemOwner: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case avatarURL = "avatar_url"
+    }
+}
+
+// MARK: - GithubItem + Equatable
+extension GithubItem: Equatable {
+    
+    static func == (lhs: GithubItem, rhs: GithubItem) -> Bool {
+        lhs.id == rhs.id && lhs.fullName == rhs.fullName
+    }
+}
+
+// MARK: - GithubItem + IdentifiableType
+extension GithubItem: IdentifiableType {
+    
+    var identity: Int {
+        id
     }
 }

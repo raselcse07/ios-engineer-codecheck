@@ -37,6 +37,10 @@ class BaseViewController: UIViewController {
 // MARK: - Reactive
 extension Reactive where Base: BaseViewController {
     
+    var viewDidAppear: Observable<Void> {
+        sentMessage(#selector(base.viewDidAppear(_:))).mapToVoid()
+    }
+    
     var isBusy: Binder<Bool> {
         Binder(base) { base, busy in
             if busy {

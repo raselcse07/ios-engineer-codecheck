@@ -70,10 +70,19 @@ extension RepositoryListViewController {
             .bind(to: viewModel.input.didClickedOnCancelButton)
             .disposed(by: rx.disposeBag)
         
+        tableView.rx.modelSelected(GithubItem.self)
+            .bind(to: viewModel.input.selectedModel)
+            .disposed(by: rx.disposeBag)
+        
         // output
         viewModel.output
             .sections
             .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.output
+            .detailRequest
+            .drive(rx.showDetail)
             .disposed(by: rx.disposeBag)
         
         viewModel.output
@@ -115,6 +124,12 @@ extension Reactive where Base: RepositoryListViewController {
     var showAlert: Binder<String> {
         Binder(base) { base, message in
             Alert.show(title: "", message: message)
+        }
+    }
+    
+    var showDetail: Binder<GithubItem> {
+        Binder(base) { base, item in
+            base.coordinator?.startDetail(item: item)
         }
     }
 }

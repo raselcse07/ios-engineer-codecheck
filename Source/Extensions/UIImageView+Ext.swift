@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 extension UIImageView {
     
@@ -23,5 +25,18 @@ extension UIImageView {
     
     func setImage(urlString: String, placeholder: UIImage? = nil) {
         setImage(url: URL(string: urlString), placeholder: placeholder)
+    }
+}
+
+// MARK: - Reactive
+extension Reactive where Base: UIImageView {
+    
+    var setImage: Binder<String> {
+        Binder(base) { base, urlString in
+            base.setImage(
+                urlString: urlString,
+                placeholder: UIImage(named: Constant.LocalImageName.placeholder)
+            )
+        }
     }
 }
